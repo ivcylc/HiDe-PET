@@ -131,6 +131,7 @@ class EPrompt(nn.Module):
                         batched_prompt_raw = self.prompt_copy[idx]
                     else:
                         batched_prompt_raw = self.prompt[idx]
+                batched_prompt_raw = batched_prompt_raw.unsqueeze(1) 
                 batch_size, top_k, dual, num_layers, length, embed_dim = batched_prompt_raw.shape
                 batched_prompt = batched_prompt_raw.reshape(
                     batch_size, top_k, dual, num_layers, length, self.num_heads, embed_dim // self.num_heads
