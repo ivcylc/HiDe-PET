@@ -102,5 +102,11 @@ def get_args_parser(subparsers):
     subparsers.add_argument('--ca_epochs', default=30, type=int)
     subparsers.add_argument('--ca_storage_efficient_method', default='multi-centroid', choices=['covariance', 'multi-centroid', 'variance'], type=str)
     subparsers.add_argument('--n_centroids', default=10, type=int)
+
+    subparsers.add_argument('--prompt_type', default='continual', type=str)
+    subparsers.add_argument('--use_mlp_head', action='store_true')
+    subparsers.add_argument('--trained_model', default='', type=str)
+    subparsers.add_argument('--mlp_ca_lr', default=0.0005, type=float)
+    
     # Misc parameters
     subparsers.add_argument('--print_freq', type=int, default=10, help = 'The frequency of printing')
