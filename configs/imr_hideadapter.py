@@ -99,6 +99,7 @@ def get_args_parser(subparsers):
     subparsers.add_argument('--ca_epochs', default=30, type=int)
     subparsers.add_argument('--ca_storage_efficient_method', default='multi-centroid', choices=['covariance', 'multi-centroid', 'variance'], type=str)
     subparsers.add_argument('--n_centroids', default=10, type=int)
+    subparsers.add_argument('--use_mlp_head', action='store_true')
 
     subparsers.add_argument('--evaluate_type', default='normal', choices=['normal', 'topk_ensemble', 'topp_ensemble', 'tii+tap'], type=str)
     subparsers.add_argument('--topk_ensemble', default=2, type=int)
