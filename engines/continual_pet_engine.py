@@ -134,7 +134,7 @@ def train_and_evaluate(model, model_without_ddp, criterion, data_loader, data_lo
 
         _compute_mean(model=model, data_loader=data_loader_per_cls, device=device, task_id=task_id,
                       class_mask=class_mask[task_id], args=args)
-        train_task_classifier(model, args, device, class_mask, task_id)
+        # train_task_classifier(model, args, device, class_mask, task_id)
 
         if task_id > 0 and not args.not_train_ca:
             pre_ca_test_stats = evaluate_till_now(model=model, data_loader=data_loader,
